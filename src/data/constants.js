@@ -48,26 +48,10 @@ export const NAV_LINKS = [
 ]
 
 export const TEAM = [
-  {
-    name: 'Ankush',
-    role: 'Director',
-    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop',
-  },
-  {
-    name: 'Ashish',
-    role: 'Co-Director',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop',
-  },
-  {
-    name: 'Ramraj',
-    role: 'Management',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop',
-  },
-  {
-    name: 'Kuldeep',
-    role: 'Developer — IT & Software',
-    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80&auto=format&fit=crop',
-  },
+  { name: 'Ankush', role: 'Director', gradient: 'from-cyan-500 to-blue-600' },
+  { name: 'Ashish', role: 'Co-Director', gradient: 'from-violet-500 to-fuchsia-600' },
+  { name: 'Ramraj', role: 'Management', gradient: 'from-emerald-500 to-teal-600' },
+  { name: 'Kuldeep', role: 'Developer — IT & Software', gradient: 'from-amber-500 to-orange-600' },
 ]
 
 export const SERVICES = [

@@ -7,6 +7,14 @@ const LinkedInIcon = () => (
   </svg>
 )
 
+const initials = (name) =>
+  name
+    .split(' ')
+    .map((n) => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase()
+
 export default function Team({ hideHeader = false }) {
   return (
     <section className={`${hideHeader ? 'pt-8 pb-20 md:pt-10 md:pb-24' : 'py-20 md:py-28'} relative bg-white`}>
@@ -29,42 +37,37 @@ export default function Team({ hideHeader = false }) {
           </div>
         )}
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl mx-auto">
           {TEAM.map((m) => (
             <div
               key={m.name}
-              className="group rounded-2xl bg-white border border-slate-200 overflow-hidden hover:border-violet-300 hover:shadow-xl hover:shadow-violet-100/50 hover:-translate-y-1 transition-all duration-300"
+              className="group rounded-2xl bg-white border border-slate-200 p-6 text-center hover:border-violet-300 hover:shadow-xl hover:shadow-violet-100/50 hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="relative aspect-square overflow-hidden">
-                <img
-                  src={m.photo}
-                  alt={m.name}
-                  loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/70 via-slate-900/0 to-transparent opacity-0 group-hover:opacity-100 transition" />
-
-                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition duration-300">
-                  <a
-                    href="#"
-                    aria-label={`${m.name} on LinkedIn`}
-                    className="w-9 h-9 rounded-lg bg-white/95 backdrop-blur grid place-items-center text-violet-600 hover:bg-white shadow-lg transition"
-                  >
-                    <LinkedInIcon />
-                  </a>
-                  <a
-                    href="#"
-                    aria-label={`Email ${m.name}`}
-                    className="w-9 h-9 rounded-lg bg-white/95 backdrop-blur grid place-items-center text-violet-600 hover:bg-white shadow-lg transition"
-                  >
-                    <Mail className="w-4 h-4" />
-                  </a>
+              <div className="relative mx-auto mb-4 w-24 h-24 md:w-28 md:h-28">
+                <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${m.gradient} blur-xl opacity-40 group-hover:opacity-70 transition`} />
+                <div className={`relative w-full h-full rounded-full bg-gradient-to-br ${m.gradient} grid place-items-center text-white text-2xl md:text-3xl font-bold shadow-xl ring-4 ring-white group-hover:scale-105 transition`}>
+                  {initials(m.name)}
                 </div>
               </div>
 
-              <div className="p-4 text-center">
-                <h3 className="font-semibold text-slate-900">{m.name}</h3>
-                <p className="text-xs md:text-sm text-slate-500 mt-0.5">{m.role}</p>
+              <h3 className="font-semibold text-slate-900">{m.name}</h3>
+              <p className="text-xs md:text-sm text-slate-500 mt-0.5">{m.role}</p>
+
+              <div className="flex justify-center gap-2 mt-4 opacity-0 group-hover:opacity-100 translate-y-1 group-hover:translate-y-0 transition duration-300">
+                <a
+                  href="#"
+                  aria-label={`${m.name} on LinkedIn`}
+                  className="w-8 h-8 rounded-lg bg-slate-100 grid place-items-center text-violet-600 hover:bg-violet-100 transition"
+                >
+                  <LinkedInIcon />
+                </a>
+                <a
+                  href="#"
+                  aria-label={`Email ${m.name}`}
+                  className="w-8 h-8 rounded-lg bg-slate-100 grid place-items-center text-violet-600 hover:bg-violet-100 transition"
+                >
+                  <Mail className="w-4 h-4" />
+                </a>
               </div>
             </div>
           ))}
