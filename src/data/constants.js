@@ -34,7 +34,51 @@ export const NAV_LINKS = [
   { label: 'Services', to: '/services' },
   { label: 'Technology', to: '/technology' },
   { label: 'Industries', to: '/industries' },
+  { label: 'Team', to: '/team' },
   { label: 'Contact', to: '/contact' },
+]
+
+export const TEAM = [
+  {
+    name: 'Vikram Singh',
+    role: 'Founder & CEO',
+    photo: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Anita Mehra',
+    role: 'Chief Operations Officer',
+    photo: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Rohit Sharma',
+    role: 'Head of Engineering',
+    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Sneha Kapoor',
+    role: 'AI & Analytics Lead',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Arjun Patel',
+    role: 'Security Operations Manager',
+    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Pooja Joshi',
+    role: 'Client Success Lead',
+    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Karan Verma',
+    role: 'Field Installations Lead',
+    photo: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80&auto=format&fit=crop',
+  },
+  {
+    name: 'Ritu Saxena',
+    role: 'Support & Monitoring Lead',
+    photo: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80&auto=format&fit=crop',
+  },
 ]
 
 export const SERVICES = [

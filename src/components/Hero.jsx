@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Play, ShieldCheck, Eye, Cpu } from 'lucide-react'
-import { BRAND } from '../data/constants'
+import { BRAND, IMAGES } from '../data/constants'
 
 export default function Hero() {
   return (
@@ -68,6 +68,22 @@ export default function Hero() {
         <div className="relative">
           <div className="relative aspect-square max-w-lg mx-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-300/40 to-violet-400/40 rounded-3xl blur-2xl" />
+
+            <img
+              src={IMAGES.heroBg}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              className="absolute -top-6 -left-6 w-44 h-32 md:w-56 md:h-40 object-cover rounded-2xl border-4 border-white shadow-xl rotate-[-6deg] hidden sm:block"
+            />
+            <img
+              src={IMAGES.about}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              className="absolute -bottom-8 -left-10 w-40 h-28 md:w-52 md:h-36 object-cover rounded-2xl border-4 border-white shadow-xl rotate-[5deg] hidden md:block"
+            />
+
             <div className="relative h-full rounded-3xl border border-slate-200 bg-white/90 backdrop-blur-xl p-8 shadow-2xl shadow-violet-200/40">
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent animate-pulse" />
