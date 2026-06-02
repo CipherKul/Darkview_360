@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
-import { ArrowRight, Phone } from 'lucide-react'
-import { BRAND } from '../data/constants'
+import { ArrowRight, Phone, MessageCircle } from 'lucide-react'
+import { BRAND, WHATSAPP } from '../data/constants'
 
 export default function CTA() {
   return (
@@ -20,13 +19,16 @@ export default function CTA() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                to="/contact"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white text-slate-900 font-semibold hover:bg-slate-100 hover:scale-105 transition"
+              <a
+                href={WHATSAPP.link}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 hover:scale-105 shadow-lg shadow-emerald-500/30 transition"
               >
-                Get Free Quote
+                <MessageCircle className="w-4 h-4" />
+                Chat on WhatsApp
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-              </Link>
+              </a>
               <a
                 href={`tel:${BRAND.phone.replace(/\s/g, '')}`}
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition"

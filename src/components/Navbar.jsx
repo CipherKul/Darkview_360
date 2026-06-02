@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link, useLocation } from 'react-router-dom'
 import { Menu, X, ShieldCheck } from 'lucide-react'
-import { BRAND, NAV_LINKS } from '../data/constants'
+import { BRAND, NAV_LINKS, WHATSAPP } from '../data/constants'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -63,12 +63,14 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <Link
-          to="/contact"
+        <a
+          href={WHATSAPP.link}
+          target="_blank"
+          rel="noreferrer"
           className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 text-white text-sm font-semibold shadow-lg shadow-violet-600/30 hover:shadow-violet-600/50 hover:scale-105 transition"
         >
           Get a Quote
-        </Link>
+        </a>
 
         <button
           onClick={() => setOpen((v) => !v)}
@@ -100,12 +102,14 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-2">
-              <Link
-                to="/contact"
+              <a
+                href={WHATSAPP.link}
+                target="_blank"
+                rel="noreferrer"
                 className="block text-center px-5 py-3 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold"
               >
                 Get a Quote
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

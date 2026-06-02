@@ -28,6 +28,15 @@ export const BRAND = {
   addressFull: 'Industrial Area, Kota, Rajasthan 324005',
 }
 
+const WA_NUMBER = '919610962962'
+const WA_MESSAGE = "Hi Darkview_360, I'm interested in your security services. Please share more details."
+
+export const WHATSAPP = {
+  number: WA_NUMBER,
+  message: WA_MESSAGE,
+  link: `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`,
+}
+
 export const NAV_LINKS = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },

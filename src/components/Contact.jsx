@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react'
-import { BRAND } from '../data/constants'
+import { BRAND, WHATSAPP } from '../data/constants'
 
 export default function Contact({ hideHeader = false }) {
   const [sent, setSent] = useState(false)
@@ -70,7 +70,7 @@ export default function Contact({ hideHeader = false }) {
             })}
 
             <a
-              href={`https://wa.me/${BRAND.phone.replace(/\D/g, '')}`}
+              href={WHATSAPP.link}
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-2 w-full p-4 rounded-2xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 shadow-lg shadow-emerald-200 transition"

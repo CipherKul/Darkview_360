@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Play, ShieldCheck, Eye, Cpu } from 'lucide-react'
-import { BRAND, IMAGES } from '../data/constants'
+import { BRAND, IMAGES, WHATSAPP } from '../data/constants'
 
 export default function Hero() {
   return (
@@ -35,13 +35,15 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Link
-              to="/contact"
+            <a
+              href={WHATSAPP.link}
+              target="_blank"
+              rel="noreferrer"
               className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold shadow-xl shadow-violet-600/30 hover:shadow-violet-600/50 hover:scale-105 transition"
             >
-              Get Free Consultation
+              Chat on WhatsApp
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-            </Link>
+            </a>
             <Link
               to="/services"
               className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white border border-slate-200 text-slate-800 font-semibold hover:bg-slate-50 hover:border-slate-300 transition"

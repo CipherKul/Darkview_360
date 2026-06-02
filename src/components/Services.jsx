@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom'
 import { Check, ArrowRight } from 'lucide-react'
-import { SERVICES } from '../data/constants'
+import { SERVICES, WHATSAPP } from '../data/constants'
 
 export default function Services({ hideHeader = false }) {
   return (
@@ -57,13 +56,15 @@ export default function Services({ hideHeader = false }) {
                   ))}
                 </ul>
 
-                <Link
-                  to="/contact"
+                <a
+                  href={WHATSAPP.link}
+                  target="_blank"
+                  rel="noreferrer"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:text-violet-700 transition group/link"
                 >
-                  Get a quote
+                  Get a quote on WhatsApp
                   <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition" />
-                </Link>
+                </a>
               </div>
             </div>
           ))}
