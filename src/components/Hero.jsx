@@ -12,7 +12,14 @@ const CAMERA_FEEDS = [
 export default function Hero() {
   return (
     <section className="relative min-h-screen pt-24 md:pt-28 pb-16 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <img
+          src="/logo.jpeg"
+          alt=""
+          aria-hidden="true"
+          style={{ filter: 'brightness(1.4) contrast(1.2)' }}
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[75vmin] max-w-[750px] opacity-60 pointer-events-none select-none mix-blend-screen"
+        />
         <div className="absolute top-1/4 -left-32 w-96 h-96 bg-blue-600/30 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 -right-32 w-96 h-96 bg-sky-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
@@ -28,12 +35,17 @@ export default function Hero() {
             24/7 Live Monitoring · Based in Kota, Rajasthan
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight text-white">
-            Smart Security with{' '}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight tracking-tight">
+            <span className="bg-gradient-to-b from-white to-slate-400 bg-clip-text text-transparent">
+              DARKVIEW
+            </span>{' '}
             <span className="bg-gradient-to-r from-blue-500 via-sky-400 to-cyan-300 bg-clip-text text-transparent">
-              360° Vision
+              360°
             </span>
           </h1>
+          <p className="mt-3 text-base md:text-lg font-medium text-slate-300 tracking-wide">
+            Live Monitoring <span className="text-sky-400">·</span> Virtual Guard <span className="text-sky-400">·</span> Real Security
+          </p>
 
           <p className="mt-6 text-lg md:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0">
             {BRAND.name} delivers AI-powered surveillance, virtual guard services,
