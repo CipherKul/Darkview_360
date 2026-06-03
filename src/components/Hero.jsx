@@ -30,11 +30,7 @@ export default function Hero() {
 
           <h1 className="sr-only">Darkview 360° — Live Monitoring, Virtual Guard, Real Security</h1>
 
-          <p className="text-sm md:text-base font-semibold text-slate-700 tracking-wider uppercase">
-            Live Monitoring <span className="text-blue-600">·</span> Virtual Guard <span className="text-blue-600">·</span> Real Security
-          </p>
-
-          <h2 className="mt-4 text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight tracking-tight text-slate-900">
             Smart security with{' '}
             <span className="bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 bg-clip-text text-transparent">
               DARK VIEW 360°

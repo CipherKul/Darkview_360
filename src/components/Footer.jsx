@@ -51,11 +51,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <Link to="/" className="inline-block">
-              <div className="p-2 rounded-xl bg-gradient-to-br from-slate-900 to-blue-950 ring-1 ring-blue-500/30 shadow-md shadow-blue-200/50">
+              <div className="rounded-xl bg-black ring-1 ring-blue-500/30 shadow-md shadow-blue-200/50 overflow-hidden">
                 <img
-                  src="/logo-wordmark.png"
+                  src="/logo-banner.jpeg"
                   alt="Darkview 360°"
-                  className="h-10 md:h-12 w-auto rounded"
+                  className="h-14 md:h-16 w-auto"
                 />
               </div>
             </Link>

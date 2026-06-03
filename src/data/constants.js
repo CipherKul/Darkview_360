@@ -48,8 +48,8 @@ export const NAV_LINKS = [
 ]
 
 export const TEAM = [
-  { name: 'Mahaveer Nagar', role: 'Director', gradient: 'from-blue-600 to-cyan-500' },
-  { name: 'Ankush Vaishnav', role: 'Director', gradient: 'from-cyan-500 to-blue-600' },
+  { name: 'Ankush Vaishnav', role: 'Founder', gradient: 'from-cyan-500 to-blue-600' },
+  { name: 'Mahaveer Nagar', role: 'Co-Founder', gradient: 'from-blue-600 to-cyan-500' },
   { name: 'Ashish Kumar', role: 'Operator', gradient: 'from-violet-500 to-fuchsia-600' },
   { name: 'Ram Ji', role: 'Management', gradient: 'from-emerald-500 to-teal-600' },
   { name: 'Kuldeep', role: 'Developer — IT & Software', gradient: 'from-amber-500 to-orange-600' },

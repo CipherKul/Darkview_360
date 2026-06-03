@@ -32,12 +32,12 @@ export default function Navbar() {
             <img
               src="/logo-mark.png"
               alt="Darkview 360°"
-              className="h-7 md:h-8 w-auto rounded"
+              className="h-7 md:h-9 w-auto rounded"
             />
           </div>
-          <span className="hidden sm:inline-block font-bold text-base md:text-lg text-slate-900">
-            DARKVIEW
-            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent ml-1">360°</span>
+          <span className="hidden sm:inline-flex items-baseline font-bold text-base md:text-lg text-slate-900">
+            DARK&nbsp;VIEW
+            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent ml-1.5">360°</span>
           </span>
         </Link>
 
