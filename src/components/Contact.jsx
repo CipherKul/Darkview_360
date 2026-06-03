@@ -20,20 +20,20 @@ export default function Contact({ hideHeader = false }) {
   ]
 
   return (
-    <section className={`${hideHeader ? 'pt-8 pb-20 md:pt-10 md:pb-24' : 'py-20 md:py-28'} relative bg-slate-50`}>
+    <section className={`${hideHeader ? 'pt-8 pb-20 md:pt-10 md:pb-24' : 'py-20 md:py-28'} relative`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {!hideHeader && (
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <div className="inline-block px-3 py-1 rounded-full bg-violet-100 border border-violet-200 text-violet-700 text-xs font-semibold tracking-wider uppercase mb-4">
+            <div className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/30 text-sky-300 text-xs font-semibold tracking-wider uppercase mb-4">
               Get in Touch
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight">
               Ready to feel{' '}
-              <span className="bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 to-sky-400 bg-clip-text text-transparent">
                 safer?
               </span>
             </h2>
-            <p className="mt-4 text-slate-600 text-lg">
+            <p className="mt-4 text-slate-400 text-lg">
               Talk to our security advisors today — free consultation, no
               obligation.
             </p>
@@ -45,12 +45,12 @@ export default function Contact({ hideHeader = false }) {
             {info.map((i) => {
               const Inner = (
                 <>
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-100 to-violet-100 grid place-items-center flex-shrink-0">
-                    <i.icon className="w-5 h-5 text-violet-600" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-sky-400/20 grid place-items-center flex-shrink-0">
+                    <i.icon className="w-5 h-5 text-sky-400" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 uppercase tracking-wider">{i.label}</div>
-                    <div className="text-slate-900 font-medium mt-0.5">{i.value}</div>
+                    <div className="text-xs text-slate-400 uppercase tracking-wider">{i.label}</div>
+                    <div className="text-white font-medium mt-0.5">{i.value}</div>
                   </div>
                 </>
               )
@@ -58,12 +58,12 @@ export default function Contact({ hideHeader = false }) {
                 <a
                   key={i.label}
                   href={i.href}
-                  className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-200 hover:border-cyan-300 hover:shadow-md transition"
+                  className="flex items-center gap-4 p-5 rounded-2xl bg-slate-900/60 border border-white/10 hover:border-sky-400/40 transition"
                 >
                   {Inner}
                 </a>
               ) : (
-                <div key={i.label} className="flex items-center gap-4 p-5 rounded-2xl bg-white border border-slate-200">
+                <div key={i.label} className="flex items-center gap-4 p-5 rounded-2xl bg-slate-900/60 border border-white/10">
                   {Inner}
                 </div>
               )
@@ -73,7 +73,7 @@ export default function Contact({ hideHeader = false }) {
               href={WHATSAPP.link}
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-2 w-full p-4 rounded-2xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 shadow-lg shadow-emerald-200 transition"
+              className="flex items-center justify-center gap-2 w-full p-4 rounded-2xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 shadow-lg shadow-emerald-900/40 transition"
             >
               <MessageCircle className="w-5 h-5" />
               Chat on WhatsApp
@@ -82,42 +82,42 @@ export default function Contact({ hideHeader = false }) {
 
           <form
             onSubmit={onSubmit}
-            className="lg:col-span-3 p-6 md:p-8 rounded-2xl bg-white border border-slate-200 shadow-lg shadow-slate-100"
+            className="lg:col-span-3 p-6 md:p-8 rounded-2xl bg-slate-900/60 border border-white/10 shadow-xl shadow-blue-900/20"
           >
             <div className="grid sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-sm text-slate-700 mb-1.5 block font-medium">Full Name</label>
+                <label className="text-sm text-slate-300 mb-1.5 block font-medium">Full Name</label>
                 <input
                   required
                   type="text"
                   placeholder="John Doe"
-                  className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 focus:bg-white transition"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-950/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20 transition"
                 />
               </div>
               <div>
-                <label className="text-sm text-slate-700 mb-1.5 block font-medium">Phone</label>
+                <label className="text-sm text-slate-300 mb-1.5 block font-medium">Phone</label>
                 <input
                   required
                   type="tel"
                   placeholder="+91 98765 43210"
-                  className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 focus:bg-white transition"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-950/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20 transition"
                 />
               </div>
             </div>
 
             <div className="mt-4">
-              <label className="text-sm text-slate-700 mb-1.5 block font-medium">Email</label>
+              <label className="text-sm text-slate-300 mb-1.5 block font-medium">Email</label>
               <input
                 required
                 type="email"
                 placeholder="you@example.com"
-                className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 focus:bg-white transition"
+                className="w-full px-4 py-3 rounded-lg bg-slate-950/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20 transition"
               />
             </div>
 
             <div className="mt-4">
-              <label className="text-sm text-slate-700 mb-1.5 block font-medium">Service Interested In</label>
-              <select className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 focus:bg-white transition">
+              <label className="text-sm text-slate-300 mb-1.5 block font-medium">Service Interested In</label>
+              <select className="w-full px-4 py-3 rounded-lg bg-slate-950/60 border border-white/10 text-white focus:outline-none focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20 transition">
                 <option>Complete Security</option>
                 <option>Live Monitoring</option>
                 <option>Virtual Guard</option>
@@ -127,17 +127,17 @@ export default function Contact({ hideHeader = false }) {
             </div>
 
             <div className="mt-4">
-              <label className="text-sm text-slate-700 mb-1.5 block font-medium">Message</label>
+              <label className="text-sm text-slate-300 mb-1.5 block font-medium">Message</label>
               <textarea
                 rows="4"
                 placeholder="Tell us about your security needs..."
-                className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-violet-400 focus:ring-2 focus:ring-violet-100 focus:bg-white transition resize-none"
+                className="w-full px-4 py-3 rounded-lg bg-slate-950/60 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-sky-400/60 focus:ring-2 focus:ring-sky-400/20 transition resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-cyan-500 to-violet-600 text-white font-semibold shadow-xl shadow-violet-300/50 hover:shadow-violet-400/60 hover:scale-[1.02] transition"
+              className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold shadow-xl shadow-blue-500/30 hover:shadow-blue-500/60 hover:scale-[1.02] transition"
             >
               {sent ? (
                 'Message Sent ✓'

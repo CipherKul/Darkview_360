@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ShieldCheck, Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin } from 'lucide-react'
 import { BRAND, NAV_LINKS, SERVICES } from '../data/constants'
 
 const SOCIALS = [
@@ -45,21 +45,21 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-slate-200 bg-slate-50">
+    <footer className="relative border-t border-blue-500/20 bg-black/60 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <Link to="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500 to-violet-600 grid place-items-center">
-                <ShieldCheck className="w-5 h-5 text-white" />
-              </div>
-              <span className="font-bold text-xl bg-gradient-to-r from-cyan-600 to-violet-600 bg-clip-text text-transparent">
-                {BRAND.name}
-              </span>
+            <Link to="/" className="inline-block">
+              <img
+                src="/logo.jpeg"
+                alt="Darkview 360°"
+                className="h-14 md:h-16 w-auto rounded-md ring-1 ring-blue-500/30"
+              />
             </Link>
-            <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-              {BRAND.tagline} Smart security solutions trusted by homes and
-              businesses across Rajasthan.
+            <p className="mt-4 text-sm text-slate-400 leading-relaxed">
+              Live Monitoring · Virtual Guard · Real Security. Smart
+              surveillance solutions trusted by homes and businesses across
+              Rajasthan.
             </p>
             <div className="flex gap-3 mt-5">
               {SOCIALS.map((s) => (
@@ -67,7 +67,7 @@ export default function Footer() {
                   key={s.name}
                   href={s.href}
                   aria-label={s.name}
-                  className="w-9 h-9 rounded-lg bg-white border border-slate-200 grid place-items-center text-slate-500 hover:text-violet-600 hover:border-violet-300 hover:bg-violet-50 transition"
+                  className="w-9 h-9 rounded-lg bg-white/5 border border-white/10 grid place-items-center text-slate-400 hover:text-sky-400 hover:border-sky-400/50 hover:bg-sky-400/10 transition"
                 >
                   {s.svg}
                 </a>
@@ -76,11 +76,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {NAV_LINKS.map((l) => (
                 <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-slate-600 hover:text-violet-600 transition">
+                  <Link to={l.to} className="text-sm text-slate-400 hover:text-sky-400 transition">
                     {l.label}
                   </Link>
                 </li>
@@ -89,11 +89,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-semibold mb-4">Services</h4>
+            <h4 className="text-white font-semibold mb-4">Services</h4>
             <ul className="space-y-2.5">
               {SERVICES.map((s) => (
                 <li key={s.title}>
-                  <Link to="/services" className="text-sm text-slate-600 hover:text-violet-600 transition">
+                  <Link to="/services" className="text-sm text-slate-400 hover:text-sky-400 transition">
                     {s.title}
                   </Link>
                 </li>
@@ -102,21 +102,21 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-slate-900 font-semibold mb-4">Contact</h4>
-            <ul className="space-y-3 text-sm text-slate-600">
+            <h4 className="text-white font-semibold mb-4">Contact</h4>
+            <ul className="space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-0.5 text-violet-600 flex-shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 text-sky-400 flex-shrink-0" />
                 <span>{BRAND.addressFull}</span>
               </li>
               <li>
-                <a href={`tel:${BRAND.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-violet-600 transition">
-                  <Phone className="w-4 h-4 text-violet-600" />
+                <a href={`tel:${BRAND.phone.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-sky-400 transition">
+                  <Phone className="w-4 h-4 text-sky-400" />
                   {BRAND.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${BRAND.email}`} className="flex items-center gap-2 hover:text-violet-600 transition">
-                  <Mail className="w-4 h-4 text-violet-600" />
+                <a href={`mailto:${BRAND.email}`} className="flex items-center gap-2 hover:text-sky-400 transition">
+                  <Mail className="w-4 h-4 text-sky-400" />
                   {BRAND.email}
                 </a>
               </li>
@@ -124,11 +124,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-6 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-slate-500">
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</p>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-violet-600 transition">Privacy Policy</a>
-            <a href="#" className="hover:text-violet-600 transition">Terms of Service</a>
+            <a href="#" className="hover:text-sky-400 transition">Privacy Policy</a>
+            <a href="#" className="hover:text-sky-400 transition">Terms of Service</a>
           </div>
         </div>
       </div>
