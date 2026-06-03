@@ -1,16 +1,29 @@
-import { useState } from 'react'
-import { Phone, Mail, MapPin, Send, MessageCircle, Clock } from 'lucide-react'
+import { useEffect, useState } from 'react'
+import { Phone, Mail, MapPin, Send, MessageCircle, Clock, CheckCircle2, X } from 'lucide-react'
 import { BRAND, WHATSAPP } from '../data/constants'
 
 export default function Contact({ hideHeader = false }) {
   const [sent, setSent] = useState(false)
+  const [name, setName] = useState('')
 
   const onSubmit = (e) => {
     e.preventDefault()
+    const submittedName = e.target.elements.fullName?.value?.trim() || ''
+    setName(submittedName)
     setSent(true)
-    setTimeout(() => setSent(false), 4000)
     e.target.reset()
   }
+
+  useEffect(() => {
+    if (!sent) return
+    const onKey = (e) => e.key === 'Escape' && setSent(false)
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [sent])
 
   const info = [
     { icon: Phone, label: 'Phone', value: BRAND.phone, href: `tel:${BRAND.phone.replace(/\s/g, '')}` },
@@ -89,6 +102,7 @@ export default function Contact({ hideHeader = false }) {
                 <label className="text-sm text-slate-700 mb-1.5 block font-medium">Full Name</label>
                 <input
                   required
+                  name="fullName"
                   type="text"
                   placeholder="John Doe"
                   className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 focus:bg-white transition"
@@ -139,18 +153,68 @@ export default function Contact({ hideHeader = false }) {
               type="submit"
               className="mt-6 w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-gradient-to-r from-blue-600 to-sky-500 text-white font-semibold shadow-xl shadow-blue-300/50 hover:shadow-blue-400/60 hover:scale-[1.02] transition"
             >
-              {sent ? (
-                'Message Sent ✓'
-              ) : (
-                <>
-                  Send Message
-                  <Send className="w-4 h-4" />
-                </>
-              )}
+              Send Message
+              <Send className="w-4 h-4" />
             </button>
           </form>
         </div>
       </div>
+
+      {sent && (
+        <div
+          className="fixed inset-0 z-[100] grid place-items-center p-4 bg-slate-900/60 backdrop-blur-sm animate-[fadeIn_.2s_ease-out]"
+          onClick={() => setSent(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="thanks-title"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-md rounded-2xl bg-white shadow-2xl ring-1 ring-slate-200 p-8 text-center animate-[popIn_.25s_cubic-bezier(.34,1.56,.64,1)]"
+          >
+            <button
+              onClick={() => setSent(false)}
+              aria-label="Close"
+              className="absolute top-3 right-3 w-9 h-9 rounded-lg grid place-items-center text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            <div className="relative mx-auto w-20 h-20 mb-5">
+              <div className="absolute inset-0 rounded-full bg-emerald-400/30 blur-2xl" />
+              <div className="relative w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 grid place-items-center shadow-lg shadow-emerald-300/50">
+                <CheckCircle2 className="w-10 h-10 text-white" strokeWidth={2.5} />
+              </div>
+            </div>
+
+            <h3 id="thanks-title" className="text-2xl md:text-3xl font-bold text-slate-900">
+              Thank you{name ? `, ${name.split(' ')[0]}` : ''}!
+            </h3>
+            <p className="mt-3 text-slate-600 leading-relaxed">
+              We've received your message. Our team at {BRAND.name} will get
+              back to you within 24 hours.
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href={WHATSAPP.link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp us now
+              </a>
+              <button
+                onClick={() => setSent(false)}
+                className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg bg-slate-100 text-slate-700 font-semibold hover:bg-slate-200 transition"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
