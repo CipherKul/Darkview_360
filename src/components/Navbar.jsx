@@ -22,17 +22,23 @@ export default function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/80 backdrop-blur-xl border-b border-blue-500/20 shadow-lg shadow-blue-900/30'
-          : 'bg-black/40 backdrop-blur-sm'
+          ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-sm'
+          : 'bg-white/70 backdrop-blur-sm'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 md:h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <img
-            src="/logo.jpeg"
-            alt="Darkview 360°"
-            className="h-10 md:h-12 w-auto rounded-md ring-1 ring-blue-500/30 shadow-md shadow-blue-900/40 group-hover:ring-blue-400/60 transition"
-          />
+          <div className="p-0.5 rounded-lg bg-gradient-to-br from-slate-900 to-blue-950 ring-1 ring-blue-500/30 shadow-sm shadow-blue-200/60 group-hover:ring-blue-400/70 transition">
+            <img
+              src="/logo-mark.png"
+              alt="Darkview 360°"
+              className="h-7 md:h-8 w-auto rounded"
+            />
+          </div>
+          <span className="hidden sm:inline-block font-bold text-base md:text-lg text-slate-900">
+            DARKVIEW
+            <span className="bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent ml-1">360°</span>
+          </span>
         </Link>
 
         <ul className="hidden lg:flex items-center gap-8">
@@ -43,7 +49,7 @@ export default function Navbar() {
                 end={l.to === '/'}
                 className={({ isActive }) =>
                   `text-sm font-medium relative group transition ${
-                    isActive ? 'text-sky-400' : 'text-slate-300 hover:text-white'
+                    isActive ? 'text-blue-600' : 'text-slate-700 hover:text-slate-900'
                   }`
                 }
               >
@@ -51,7 +57,7 @@ export default function Navbar() {
                   <>
                     {l.label}
                     <span
-                      className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-500 to-sky-400 transition-all duration-300 ${
+                      className={`absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-blue-600 to-sky-400 transition-all duration-300 ${
                         isActive ? 'w-full' : 'w-0 group-hover:w-full'
                       }`}
                     />
@@ -66,14 +72,14 @@ export default function Navbar() {
           href={WHATSAPP.link}
           target="_blank"
           rel="noreferrer"
-          className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-sky-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/60 hover:scale-105 transition"
+          className="hidden lg:inline-flex items-center px-5 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-sky-500 text-white text-sm font-semibold shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 hover:scale-105 transition"
         >
           Get a Quote
         </a>
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden p-2 text-slate-200"
+          className="lg:hidden p-2 text-slate-700"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -81,7 +87,7 @@ export default function Navbar() {
       </nav>
 
       {open && (
-        <div className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-blue-500/20 shadow-xl">
+        <div className="lg:hidden bg-white border-t border-slate-200 shadow-lg">
           <ul className="px-4 py-4 space-y-1">
             {NAV_LINKS.map((l) => (
               <li key={l.to}>
@@ -91,8 +97,8 @@ export default function Navbar() {
                   className={({ isActive }) =>
                     `block py-2.5 px-3 rounded-lg font-medium transition ${
                       isActive
-                        ? 'bg-blue-500/15 text-sky-400'
-                        : 'text-slate-300 hover:bg-white/5'
+                        ? 'bg-blue-50 text-blue-700'
+                        : 'text-slate-700 hover:bg-slate-50'
                     }`
                   }
                 >

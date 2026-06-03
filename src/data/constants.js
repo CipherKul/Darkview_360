@@ -23,9 +23,9 @@ export const BRAND = {
   name: 'Darkview_360',
   tagline: '360° Surveillance. Zero Blind Spots.',
   phone: '+91 96109 62962',
-  email: 'enquiry@darkview360.com',
+  email: 'darkview360@gmail.com',
   address: 'Kota, Rajasthan, India',
-  addressFull: 'Industrial Area, Kota, Rajasthan 324005',
+  addressFull: 'F-601, Neelkanth Apartment, Borkheda, Kota, Rajasthan 324001',
 }
 
 const WA_NUMBER = '919610962962'
@@ -48,9 +48,10 @@ export const NAV_LINKS = [
 ]
 
 export const TEAM = [
-  { name: 'Ankush', role: 'Director', gradient: 'from-cyan-500 to-blue-600' },
-  { name: 'Ashish', role: 'Co-Director', gradient: 'from-violet-500 to-fuchsia-600' },
-  { name: 'Ramraj', role: 'Management', gradient: 'from-emerald-500 to-teal-600' },
+  { name: 'Mahaveer Nagar', role: 'Director', gradient: 'from-blue-600 to-cyan-500' },
+  { name: 'Ankush Vaishnav', role: 'Director', gradient: 'from-cyan-500 to-blue-600' },
+  { name: 'Ashish Kumar', role: 'Operator', gradient: 'from-violet-500 to-fuchsia-600' },
+  { name: 'Ram Ji', role: 'Management', gradient: 'from-emerald-500 to-teal-600' },
   { name: 'Kuldeep', role: 'Developer — IT & Software', gradient: 'from-amber-500 to-orange-600' },
 ]
 
@@ -85,7 +86,7 @@ export const SERVICES = [
     desc: 'Smoke, intrusion, and motion sensors integrated with a centralized alarm response system for rapid action.',
     features: ['Smoke sensors', 'Intrusion alarms', 'Panic button', 'Auto dispatch'],
     color: 'from-amber-500 to-orange-600',
-    image: 'https://images.unsplash.com/photo-1622559617436-9ea9b34d391c?w=800&q=80&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80&auto=format&fit=crop',
   },
 ]
 
