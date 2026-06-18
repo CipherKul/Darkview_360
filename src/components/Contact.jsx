@@ -27,6 +27,7 @@ export default function Contact({ hideHeader = false }) {
 
   const info = [
     { icon: Phone, label: 'Phone', value: BRAND.phone, href: `tel:${BRAND.phone.replace(/\s/g, '')}` },
+    { icon: Phone, label: 'Phone (Alt)', value: BRAND.phone2, href: `tel:${BRAND.phone2.replace(/\s/g, '')}` },
     { icon: Mail, label: 'Email', value: BRAND.email, href: `mailto:${BRAND.email}` },
     { icon: MapPin, label: 'Address', value: BRAND.addressFull },
     { icon: Clock, label: 'Open', value: '24 / 7 · Always available' },
@@ -89,7 +90,16 @@ export default function Contact({ hideHeader = false }) {
               className="flex items-center justify-center gap-2 w-full p-4 rounded-2xl bg-emerald-500 text-white font-semibold hover:bg-emerald-600 shadow-lg shadow-emerald-200 transition"
             >
               <MessageCircle className="w-5 h-5" />
-              Chat on WhatsApp
+              WhatsApp · {BRAND.phone}
+            </a>
+            <a
+              href={WHATSAPP.link2}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 w-full p-4 rounded-2xl bg-emerald-500/90 text-white font-semibold hover:bg-emerald-600 shadow-lg shadow-emerald-200 transition"
+            >
+              <MessageCircle className="w-5 h-5" />
+              WhatsApp · {BRAND.phone2}
             </a>
           </div>
 

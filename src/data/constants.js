@@ -23,18 +23,22 @@ export const BRAND = {
   name: 'Darkview_360',
   tagline: '360° Surveillance. Zero Blind Spots.',
   phone: '+91 96109 62962',
+  phone2: '+91 87409 60909',
   email: 'darkview360@gmail.com',
   address: 'Kota, Rajasthan, India',
   addressFull: 'F-601, Neelkanth Apartment, Borkheda, Kota, Rajasthan 324001',
 }
 
 const WA_NUMBER = '919610962962'
+const WA_NUMBER_2 = '918740960909'
 const WA_MESSAGE = "Hi Darkview_360, I'm interested in your security services. Please share more details."
 
 export const WHATSAPP = {
   number: WA_NUMBER,
   message: WA_MESSAGE,
   link: `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(WA_MESSAGE)}`,
+  number2: WA_NUMBER_2,
+  link2: `https://wa.me/${WA_NUMBER_2}?text=${encodeURIComponent(WA_MESSAGE)}`,
 }
 
 export const NAV_LINKS = [

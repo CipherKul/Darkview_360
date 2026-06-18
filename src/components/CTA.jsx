@@ -1,4 +1,4 @@
-import { ArrowRight, Phone, MessageCircle } from 'lucide-react'
+import { Phone, MessageCircle } from 'lucide-react'
 import { BRAND, WHATSAPP } from '../data/constants'
 
 export default function CTA() {
@@ -19,24 +19,43 @@ export default function CTA() {
               experts in Kota.
             </p>
 
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href={WHATSAPP.link}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 hover:scale-105 shadow-lg shadow-emerald-500/30 transition"
-              >
-                <MessageCircle className="w-4 h-4" />
-                Chat on WhatsApp
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition" />
-              </a>
-              <a
-                href={`tel:${BRAND.phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition"
-              >
-                <Phone className="w-4 h-4" />
-                {BRAND.phone}
-              </a>
+            <div className="mt-8 space-y-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={WHATSAPP.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 hover:scale-105 shadow-lg shadow-emerald-500/30 transition"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp · {BRAND.phone}
+                </a>
+                <a
+                  href={WHATSAPP.link2}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 hover:scale-105 shadow-lg shadow-emerald-500/30 transition"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp · {BRAND.phone2}
+                </a>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href={`tel:${BRAND.phone.replace(/\s/g, '')}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition"
+                >
+                  <Phone className="w-4 h-4" />
+                  {BRAND.phone}
+                </a>
+                <a
+                  href={`tel:${BRAND.phone2.replace(/\s/g, '')}`}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-white/10 border border-white/20 text-white font-semibold hover:bg-white/20 transition"
+                >
+                  <Phone className="w-4 h-4" />
+                  {BRAND.phone2}
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -118,6 +118,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href={`tel:${BRAND.phone2.replace(/\s/g, '')}`} className="flex items-center gap-2 hover:text-blue-600 transition">
+                  <Phone className="w-4 h-4 text-blue-600" />
+                  {BRAND.phone2}
+                </a>
+              </li>
+              <li>
                 <a href={`mailto:${BRAND.email}`} className="flex items-center gap-2 hover:text-blue-600 transition">
                   <Mail className="w-4 h-4 text-blue-600" />
                   {BRAND.email}
