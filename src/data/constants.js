@@ -57,6 +57,16 @@ export const TEAM = [
   { name: 'Ashish Kumar', role: 'Operator', gradient: 'from-violet-500 to-fuchsia-600' },
   { name: 'Ram Ji', role: 'Management', gradient: 'from-emerald-500 to-teal-600' },
   { name: 'Kuldeep', role: 'Developer — IT & Software', gradient: 'from-amber-500 to-orange-600' },
+  { name: 'Rohit Sharma', role: 'Senior Technician — Camera Install', gradient: 'from-sky-500 to-indigo-600' },
+  { name: 'Suresh Meena', role: 'Network & Systems Engineer', gradient: 'from-indigo-500 to-purple-600' },
+  { name: 'Pooja Verma', role: 'Surveillance Analyst — Live Watch', gradient: 'from-pink-500 to-rose-600' },
+  { name: 'Vikram Singh', role: 'Field Service Engineer', gradient: 'from-orange-500 to-red-600' },
+  { name: 'Deepak Yadav', role: 'AI & Video Analytics Engineer', gradient: 'from-teal-500 to-emerald-600' },
+  { name: 'Neha Gupta', role: 'Customer Support Lead', gradient: 'from-fuchsia-500 to-pink-600' },
+  { name: 'Manoj Kumar', role: 'Sales & Business Development', gradient: 'from-yellow-500 to-amber-600' },
+  { name: 'Rajesh Jain', role: 'Alarm Response Coordinator', gradient: 'from-lime-500 to-green-600' },
+  { name: 'Anita Soni', role: 'Account & Operations Manager', gradient: 'from-rose-500 to-pink-600' },
+  { name: 'Sunil Patel', role: 'Cabling & Wiring Specialist', gradient: 'from-cyan-500 to-teal-600' },
 ]
 
 export const SERVICES = [
